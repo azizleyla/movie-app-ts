@@ -7,7 +7,7 @@ export type IBoolean={
     movies?:any,
     movie?:any
 }
-const TrendinMovies = ({isAbsolute,movies}:IBoolean) => {
+const AllMovies = ({isAbsolute,movies}:IBoolean) => {
   return (
     <>
     <MovieList movies={movies} isAbsolute={isAbsolute}/>
@@ -16,4 +16,4 @@ const TrendinMovies = ({isAbsolute,movies}:IBoolean) => {
   )
 }
 
-export default TrendinMovies
+export default AllMovies
