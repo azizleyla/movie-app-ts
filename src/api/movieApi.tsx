@@ -1,7 +1,8 @@
-import React from "react";
+import { baseApi } from "./baseApi"
 
-const movieApi = () => {
-  return <div>movieApi</div>;
-};
-
-export default movieApi;
+export const MovieApi = {
+  async getAllMovies(){
+    const response = await baseApi.get(`discover/movie?api_key=4faf715e4beccd69d65cf8aa0f91cc5a`);
+    return response.data;
+  }
+}

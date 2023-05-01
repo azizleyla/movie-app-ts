@@ -1,7 +1,19 @@
-import React from "react";
+import React from 'react'
+import { IBoolean } from '../Trending/TrendinMovies'
+import MovieItem from './MovieItem'
 
-const MovieList = () => {
-  return <div className="bg-red-500">MovieList</div>;
-};
 
-export default MovieList;
+
+const MovieList = ({isAbsolute,movies}:IBoolean) => {
+  return (
+    <div className='grid'>
+      {movies?.map((movie:any) =>(
+      <MovieItem movie={movie} isAbsolute={isAbsolute}/>
+      ))}
+     
+
+    </div>
+  )
+}
+
+export default MovieList
