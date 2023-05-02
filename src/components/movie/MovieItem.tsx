@@ -2,11 +2,13 @@ import React from "react";
 import { FiBookmark } from "react-icons/fi";
 import { IBoolean } from "../movies/AllMovies";
 import { MdLocalMovies } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const MovieItem = ({ isAbsolute, movie }: any) => {
-  console.log(process.env.REACT_APP_API_KEY);
+
   return (
-    <div className=" group rounded-lg transition-all relative cursor-pointer">
+    <Link to={`/movie/${movie.id}`}>
+       <div className=" group rounded-lg transition-all relative cursor-pointer">
       <div className="w-[100%]  h-[320px] relative">
         <img
           className="w-full h-full  rounded-md"
@@ -37,6 +39,8 @@ const MovieItem = ({ isAbsolute, movie }: any) => {
         </h2>
       </div>
     </div>
+    </Link>
+   
   );
 };
 
