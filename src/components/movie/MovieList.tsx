@@ -1,8 +1,13 @@
 import React from "react";
-import { IBoolean } from "../movies/AllMovies";
 import MovieItem from "./MovieItem";
+import { IMovie } from "../../types/types";
 
-const MovieList = ({ isAbsolute, movies }: IBoolean) => {
+interface IProps {
+  isAbsolute: boolean;
+  movies: IMovie[];
+}
+
+const MovieList = ({ isAbsolute, movies }: IProps) => {
   return (
     <div className="grid">
       {movies?.map((movie: any) => (
