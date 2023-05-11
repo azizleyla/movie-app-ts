@@ -19,4 +19,15 @@ export const MovieApi = {
     );
     return response.data;
   },
+  async getCharactersByMovieId(id:number){
+    const response = await baseApi.get(
+      `movie/${id}/credits?api_key=4faf715e4beccd69d65cf8aa0f91cc5a`,
+    );
+    return response.data;
+  },
+  async getKeywordsByMovieId(id:string){
+    const response = await  baseApi.get(`movie/${id}/keywords?api_key=4faf715e4beccd69d65cf8aa0f91cc5a`)
+    return response.data;
+  }
+
 };

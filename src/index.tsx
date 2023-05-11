@@ -5,7 +5,7 @@ import App from './App';
 import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter } from 'react-router-dom';
 import 'react-circular-progressbar/dist/styles.css';
-
+import 'swiper/css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -15,6 +15,11 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
 }
+.grid-2{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 45px;
+}
 
 .gradient {
   background-position: left calc((50vw - 170px) - 340px) top;

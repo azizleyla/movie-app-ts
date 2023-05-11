@@ -5,9 +5,23 @@ import {
   CircularProgressbar,
 } from "react-circular-progressbar";
 import { Link, useParams } from "react-router-dom";
+
 import { MovieApi } from "../../api/movieApi";
 import { ApiQueryKeys } from "../../constants/api.constants";
 import { IDirector, IMovie } from "../../types/types";
+import Characters from "../characters/Characters";
+import Character from "../characters/Characters";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Keywords from "../keywords/Keywords";
+import { formatNumber } from "../../utils/formatter";
+
+type Language = {
+  [key:string]:string
+}
+let languages:Language = {
+  'en':'English',
+  'rus':'Russian'
+}
 
 const ItemDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -44,6 +58,7 @@ const ItemDetail = () => {
           name: current.name,
           job: current.job,
           crew: [],
+          cast:[]
         };
         acc.push(newDirector);
       }
@@ -63,10 +78,11 @@ const ItemDetail = () => {
   }
 
   return (
+    <>
     <div
       className={`my-10 bg-cover z-10  bg-position relative bg-center `}
       style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${movieItem?.backdrop_path})`,
+        backgroundImage: `url(https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${movieItem?.backdrop_path})`,
       }}
     >
       <div className="overlay absolute -z-[1] top-0 left-0 w-full h-full"></div>
@@ -86,7 +102,7 @@ const ItemDetail = () => {
               </Link>
               <span className="font-normal opacity-80">
                 {" "}
-                ({movieItem?.release_date.slice(0, 4)})
+                ({movieItem?.release_date?.slice(0, 4)})
               </span>
             </h2>
           </div>
@@ -136,7 +152,7 @@ const ItemDetail = () => {
           <div className="flex text-white text-sm gap-[20px]">
             <span className="text-white">
               {movieItem?.release_date} (
-              {movieItem?.original_language.toUpperCase()})
+              {movieItem?.original_language?.toUpperCase()})
             </span>
             <div className="before:w-1 before:h-1 ml-4 before:rounded-full before:bg-[#ccc] before:absolute relative before:top-[50%] before:-left-[10px]">
               {tags?.map((name: string, index: number) => (
@@ -172,8 +188,57 @@ const ItemDetail = () => {
             ))}
           </ol>
         </div>
+       
       </div>
+     
     </div>
+  
+      <div className="container mx-auto mt-10">
+        <div className="flex gap-10">
+          <div className="w-[70%]">
+       <div className='flex justify-between text-white mb-10 '>
+      <h1>Top Billed Cast</h1>
+      <button className="underline">View All</button>
+        </div>
+            <div className="mt-10 flex gap-4 overflow-x-scroll overflow-y-hidden  p-10 ">
+            {directorsData?.cast?.slice(0,9).map((director) =>(
+                <Characters director={director} />
+        ))}   
+             </div>  
+          </div>  
+          <div>   
+       <div className="text-white flex flex-col gap-8">
+      <p className="font-semild">
+        <strong className="block">Status</strong>
+      {movieItem?.status}
+      </p>
+      <p>
+        <strong className="block">Orignal Language</strong>
+        {movieItem && languages[movieItem?.original_language]}
+      </p>
+      <p>
+        <strong className="block">Budget</strong>
+          { movieItem?.budget ? formatNumber(movieItem?.budget) : "-"}
+      </p>
+      <p>
+        <strong className="block">Revenue</strong>
+        {movieItem?.revenue ? formatNumber(movieItem?.revenue) : "-"}
+      </p>
+        </div>
+       <Keywords/>
+       <div className="">
+       <p className="text-white my-3">Content Score</p>
+        <div className="bg-[#ccc] px-4 py-2 h-full rounded-sm">100</div>
+        <span className="text-white text-sm">Yes,Looking Code</span>
+        </div>
+       
+    </div> 
+
+    </div>
+   
+    </div>
+    <h1>New Casrs</h1>
+    </>
   );
 };
 

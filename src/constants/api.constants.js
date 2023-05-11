@@ -1,3 +1,4 @@
 export const ApiQueryKeys = {
-    movies:'movies'
+    movies:'movies',
+    keywords:'keywords'
 }

@@ -60,6 +60,16 @@ export interface IMovie {
 }
 export interface IDirector {
   crew: [];
+  cast:[];
   name: string;
   job: string;
+}
+export interface IKeyword{
+  id:number,
+  name:string
+}
+
+export interface IKeywords{
+  id:number;
+  keywords:[]
 }
