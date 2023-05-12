@@ -10,8 +10,6 @@ import { MovieApi } from "../../api/movieApi";
 import { ApiQueryKeys } from "../../constants/api.constants";
 import { IDirector, IMovie } from "../../types/types";
 import Characters from "../characters/Characters";
-import Character from "../characters/Characters";
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Keywords from "../keywords/Keywords";
 import { formatNumber } from "../../utils/formatter";
 
@@ -86,7 +84,7 @@ const ItemDetail = () => {
       }}
     >
       <div className="overlay absolute -z-[1] top-0 left-0 w-full h-full"></div>
-      <div className="p-10 py-6  z-10 flex flex-col md:flex-row items-center  gap-10">
+      <div className="p-10 py-6  z-10 flex flex-col  md:flex-row   items-center  gap-10">
         <div className=" relative">
           <img
             className=" h-[500px]  rounded-md"
@@ -194,13 +192,13 @@ const ItemDetail = () => {
     </div>
   
       <div className="container mx-auto mt-10">
-        <div className="flex gap-10">
+        <div className="flex flex-col md:flex-row gap-10">
           <div className="w-[70%]">
        <div className='flex justify-between text-white mb-10 '>
       <h1>Top Billed Cast</h1>
-      <button className="underline">View All</button>
+      <Link to={`/movie/${id}/cast`} className="underline">View All</Link>
         </div>
-            <div className="mt-10 flex gap-4 overflow-x-scroll overflow-y-hidden  p-10 ">
+            <div className="mt-10 flex gap-4 overflow-x-scroll overflow-y-hiddens">
             {directorsData?.cast?.slice(0,9).map((director) =>(
                 <Characters director={director} />
         ))}   

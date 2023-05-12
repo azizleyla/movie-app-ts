@@ -3,6 +3,7 @@ import "./App.css";
 import AllMovies from "./components/movies/AllMovies";
 import { Navigate, Route, Routes } from "react-router-dom";
 import ItemDetail from "./components/movie/ItemDetail";
+import AllCharacters from "./components/characters/AllCharacters";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           path="/movies"
           element={<AllMovies  isAbsolute={false} />}
         />
+         <Route path="/movie/:id/cast" element={<AllCharacters />}/>
         <Route path="/movie/:id" element={<ItemDetail />} />
       </Routes>
  

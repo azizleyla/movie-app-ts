@@ -36,7 +36,7 @@ const AllMovies = ({ isAbsolute }: IBoolean) => {
 
   return (
     <div className="container m-auto mt-10 px-4 md:p-2">
-      <div className="flex gap-0 md:gap-10">
+      <div className="flex  gap-0 md:gap-10">
         <div className="px-2  md:h-[800px] md:w-[120px] w-full fixed md:static bottom-0 z-10 left-0 bg-[#151d2f] flex flex-col  md:items-center justify-between   rounded-xl">
           <ul className="text-white h-[80px] md:h-0 text-3xl group mt-0 md:mt-10 gap-7 flex items-center justify-evenly md:justify-normal md:flex-col flex-row">
             <li className="mb-0 md:mb-7 cursor-pointer">

@@ -73,3 +73,9 @@ export interface IKeywords{
   id:number;
   keywords:[]
 }
+export interface ICharacters{
+  id:number,
+  name:string,
+  character:string,
+  profile_path:string
+}
