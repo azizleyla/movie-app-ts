@@ -12,6 +12,7 @@ import { IDirector, IMovie } from "../../types/types";
 import Characters from "../characters/Characters";
 import Keywords from "../keywords/Keywords";
 import { formatNumber } from "../../utils/formatter";
+import Reviews from "../reviews/Reviews";
 
 type Language = {
   [key:string]:string
@@ -194,16 +195,18 @@ const ItemDetail = () => {
       <div className="container mx-auto mt-10">
         <div className="flex flex-col md:flex-row gap-10">
           <div className="w-[70%]">
-       <div className='flex justify-between text-white mb-10 '>
-      <h1>Top Billed Cast</h1>
-      <Link to={`/movie/${id}/cast`} className="underline">View All</Link>
-        </div>
+          <div className='flex justify-between text-white mb-10 '>
+       <h1>Top Billed Cast</h1>
+       <Link to={`/movie/${id}/cast`} className="underline">View All</Link>
+          </div>
             <div className="mt-10 flex gap-4 overflow-x-scroll overflow-y-hiddens">
             {directorsData?.cast?.slice(0,9).map((director) =>(
                 <Characters director={director} />
         ))}   
-             </div>  
+             </div>
+             <Reviews/>  
           </div>  
+         
           <div>   
        <div className="text-white flex flex-col gap-8">
       <p className="font-semild">
