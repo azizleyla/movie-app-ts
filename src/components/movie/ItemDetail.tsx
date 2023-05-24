@@ -13,6 +13,7 @@ import Characters from "../characters/Characters";
 import Keywords from "../keywords/Keywords";
 import { formatNumber } from "../../utils/formatter";
 import Reviews from "../reviews/Reviews";
+import Recommendations from "../recommendations/Recommendations";
 
 type Language = {
   [key:string]:string
@@ -204,7 +205,8 @@ const ItemDetail = () => {
                 <Characters director={director} />
         ))}   
              </div>
-             <Reviews/>  
+             <Reviews movieItem={movieItem}/>  
+             <Recommendations/>
           </div>  
          
           <div>   

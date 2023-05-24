@@ -79,3 +79,18 @@ export interface ICharacters{
   character:string,
   profile_path:string
 }
+export interface IReview {
+  author: string;
+  author_details: {
+    avatar_path: string;
+    rating: number;
+  };
+  content: string;
+}
+export interface IRecommendation{
+  id: number;
+  poster_path: string;
+  release_date: string;
+  original_title: string;
+  vote_average: number;
+}

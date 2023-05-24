@@ -6,6 +6,7 @@ import { MutationCache, QueryCache, QueryClient, QueryClientProvider } from '@ta
 import { BrowserRouter } from 'react-router-dom';
 import 'react-circular-progressbar/dist/styles.css';
 import 'swiper/css';
+import ScrollToTop from './components/common/ScrollToTop';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -43,12 +44,11 @@ const queryClient = new QueryClient({
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <ScrollToTop/>
     <QueryClientProvider client={queryClient}>
         <App />
         </QueryClientProvider>
     </BrowserRouter>
-     
- 
   </React.StrictMode>
 );
 

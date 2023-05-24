@@ -3,9 +3,14 @@ import { FiBookmark } from "react-icons/fi";
 import { IBoolean } from "../movies/AllMovies";
 import { MdLocalMovies } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { IMovie } from "../../types/types";
 
-const MovieItem = ({ isAbsolute, movie }: any) => {
+interface IProps {
+  isAbsolute:boolean,
+  movie:IMovie
+}
 
+const MovieItem = ({ isAbsolute, movie }: IProps) => {
   return (
     <Link to={`/movie/${movie.id}`}>
        <div className=" group rounded-lg transition-all relative cursor-pointer">

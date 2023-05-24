@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { IMovie } from "../../types/types";
 
-const MovieHeader = ({handleNavigate, movieItem }) => {
+interface IProps{
+  handleNavigate:() => void,
+  movieItem:IMovie | undefined
+}
+
+const MovieHeader = ({handleNavigate, movieItem }:IProps) => {
   return (
     <div className="bg-[#202060]  text-white p-5 ">
       <div className="container m-auto">
