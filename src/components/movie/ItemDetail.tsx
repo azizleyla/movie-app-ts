@@ -14,6 +14,7 @@ import Keywords from "../keywords/Keywords";
 import { formatNumber } from "../../utils/formatter";
 import Reviews from "../reviews/Reviews";
 import Recommendations from "../recommendations/Recommendations";
+import CollectionsBanner from "../collections/CollectionsBanner";
 
 type Language = {
   [key:string]:string
@@ -206,7 +207,9 @@ const ItemDetail = () => {
         ))}   
              </div>
              <Reviews movieItem={movieItem}/>  
+             <CollectionsBanner movieItem={movieItem}/>
              <Recommendations/>
+             
           </div>  
          
           <div>   
