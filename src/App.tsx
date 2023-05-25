@@ -6,30 +6,21 @@ import ItemDetail from "./components/movie/ItemDetail";
 import AllCharacters from "./components/characters/AllCharacters";
 import AllReview from "./components/reviews/AllReview";
 import ScrollToTop from "./components/common/ScrollToTop";
-
+import CollectionDetail from "./components/collections/CollectionDetail";
 
 function App() {
-
-
   return (
     <>
-  
-    <Routes>
-
-<Route path="/" element={<Navigate to="/movies" />} />
-<Route
-  path="/movies"
-  element={<AllMovies  isAbsolute={false} />}
-/>
- <Route path="/movie/:id/cast" element={<AllCharacters />}/>
- <Route path="/movie/:id/all-reviews" element={<AllReview/>}/>
-<Route path="/movie/:id" element={<ItemDetail />} />
-</Routes>
-   
-  
- 
-</>
-  )
+      <Routes>
+        <Route path="/" element={<Navigate to="/movies" />} />
+        <Route path="/movies" element={<AllMovies isAbsolute={false} />} />
+        <Route path="/movie/:id/cast" element={<AllCharacters />} />
+        <Route path="/movie/:id/all-reviews" element={<AllReview />} />
+        <Route path="/movie/:id" element={<ItemDetail />} />
+        <Route path="/collection/:id" element={<CollectionDetail />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;

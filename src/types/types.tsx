@@ -60,24 +60,24 @@ export interface IMovie {
 }
 export interface IDirector {
   crew: [];
-  cast:[];
+  cast: [];
   name: string;
   job: string;
 }
-export interface IKeyword{
-  id:number,
-  name:string
+export interface IKeyword {
+  id: number;
+  name: string;
 }
 
-export interface IKeywords{
-  id:number;
-  keywords:[]
+export interface IKeywords {
+  id: number;
+  keywords: [];
 }
-export interface ICharacters{
-  id:number,
-  name:string,
-  character:string,
-  profile_path:string
+export interface ICharacters {
+  id: number;
+  name: string;
+  character: string;
+  profile_path: string;
 }
 export interface IReview {
   author: string;
@@ -87,10 +87,17 @@ export interface IReview {
   };
   content: string;
 }
-export interface IRecommendation{
+export interface IRecommendation {
   id: number;
   poster_path: string;
   release_date: string;
   original_title: string;
   vote_average: number;
+}
+
+export interface IMoviePart {
+  poster_path: string;
+  original_title: string;
+  release_date: string;
+  overview: string;
 }
