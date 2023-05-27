@@ -15,6 +15,7 @@ import { formatNumber } from "../../utils/formatter";
 import Reviews from "../reviews/Reviews";
 import Recommendations from "../recommendations/Recommendations";
 import CollectionsBanner from "../collections/CollectionsBanner";
+import Media from "../media/Media";
 
 type Language = {
   [key: string]: string;
@@ -207,6 +208,7 @@ const ItemDetail = () => {
               ))}
             </div>
             <Reviews movieItem={movieItem} />
+            <Media />
             {movieItem?.belongs_to_collection && (
               <CollectionsBanner movieItem={movieItem} />
             )}

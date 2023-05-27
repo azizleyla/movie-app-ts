@@ -100,4 +100,6 @@ export interface IMoviePart {
   original_title: string;
   release_date: string;
   overview: string;
+  popularity: number;
+  vote_average: number;
 }
